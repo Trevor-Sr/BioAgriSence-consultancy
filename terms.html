@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - BioAgriSence Consultancy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .fade-in-delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .fade-in-delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .fade-in-delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .morphing-bg {
+            background: linear-gradient(-45deg, #4a1e8a, #045d89, #21128d, #f5576c);
+            background-size: 400% 400%;
+            animation: gradientMorph 8s ease infinite;
+        }
+
+        @keyframes gradientMorph {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(-45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+                transform: scale(1);
+            }
+
+            50% {
+                box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+                transform: scale(1.05);
+            }
+        }
+
+        .btn-loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-loading:hover::after {
+            left: 100%;
+        }
+
+        .magnetic {
+            transition: transform 0.3s ease;
+        }
+
+        .magnetic:hover {
+            transform: scale(1.1) rotate(-2deg);
+        }
+
+        /* Table of Contents sticky navigation */
+        .toc-nav {
+            position: sticky;
+            top: 100px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .toc-nav a {
+            transition: all 0.3s ease;
+        }
+
+        .toc-nav a:hover {
+            transform: translateX(5px);
+            color: #3b82f6;
+        }
+
+        .toc-nav a.active {
+            color: #3b82f6;
+            font-weight: 600;
+            border-left: 3px solid #3b82f6;
+            padding-left: 12px;
+        }
+
+        /* Content sections styling */
+        .content-section {
+            scroll-margin-top: 100px;
+        }
+
+        .content-section h2 {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .content-section h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid #3b82f6;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+        }
+
+        .danger-box {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-left: 4px solid #ef4444;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border-left: 4px solid #10b981;
+        }
+
+        /* Last updated badge */
+        .last-updated {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .last-updated::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* Progress bar for reading */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Legal definitions styling */
+        .definition-term {
+            font-weight: 600;
+            color: #1f2937;
+            border-bottom: 2px dotted #3b82f6;
+            cursor: help;
+        }
+
+        .definition-term:hover {
+            background-color: #dbeafe;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        /* Fee table styling */
+        .fee-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .fee-table th {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+        }
+
+        .fee-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .fee-table tr:hover {
+            background-color: #e0f2fe;
+            transform: scale(1.01);
+            transition: all 0.2s ease;
+        }
+
+        /* Agreement checklist */
+        .agreement-item {
+            display: flex;
+            align-items: flex-start;
+            space-x: 3;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .agreement-item:hover {
+            background-color: #f0f9ff;
+            transform: translateX(5px);
+        }
+
+        .agreement-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #3b82f6;
+            border-radius: 4px;
+            margin-right: 12px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Contact card */
+        .contact-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Reading Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect">
+        <div class="max-w-[93em] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-white gradient-text">BioAgriSence</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-white hover:text-blue-200 transition-all duration-300 hover:scale-110">Home</a>
+                        <a href="services.html"
+                            class="text-white hover:text-blue-200 transition-all duration-300 hover:scale-110">Services</a>
+                        <a href="about.html"
+                            class="text-white hover:text-blue-200 transition-all duration-300 hover:scale-110">About</a>
+                        <a href="contact.html"
+                            class="text-white hover:text-blue-200 transition-all duration-300 hover:scale-110">Contact</a>
+                    </div>
+                </div>
+                <a href="contact.html"
+                    class="bg-white text-blue-600 px-6 py-2 rounded-full font-medium hover:bg-blue-50 transition-all duration-300 hover:scale-105 pulse-glow btn-loading">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="morphing-bg pt-24 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-white opacity-10 rounded-full floating"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-white opacity-10 rounded-full floating"
+                style="animation-delay: -1s;"></div>
+        </div>
+
+        <div class="max-w-[93em] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 fade-in">
+                    Terms of <span class="text-yellow-300">Service</span>
+                </h1>
+                <p class="text-xl mb-8 text-blue-100 fade-in fade-in-delay-1 max-w-3xl mx-auto">
+                    Please read these terms carefully before using our services. By engaging BioAgriSence Consultancy, you agree
+                    to be bound by these terms and conditions.
+                </p>
+                <div
+                    class="last-updated bg-white bg-opacity-20 backdrop-blur-lg rounded-full px-6 py-3 inline-block fade-in fade-in-delay-2">
+                    <p class="text-blue-100">
+                        <span class="font-semibold">Last Updated:</span> Nov 13, 2025
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 bg-white">
+        <div class="max-w-[93em] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-12">
+                <!-- Table of Contents -->
+                <div class="lg:col-span-1">
+                    <div class="toc-nav bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Table of Contents</h3>
+                        <nav class="space-y-3">
+                            <a href="#acceptance" class="block text-gray-600 hover:text-blue-600 transition-colors">1.
+                                Acceptance of Terms</a>
+                            <a href="#definitions" class="block text-gray-600 hover:text-blue-600 transition-colors">2.
+                                Definitions</a>
+                            <a href="/services" class="block text-gray-600 hover:text-blue-600 transition-colors">3. Our
+                                Services</a>
+                            <a href="#client-obligations"
+                                class="block text-gray-600 hover:text-blue-600 transition-colors">4. Client
+                                Obligations</a>
+                            <a href="#fees-payment" class="block text-gray-600 hover:text-blue-600 transition-colors">5.
+                                Fees & Payment</a>
+                            <a href="#professional-standards"
+                                class="block text-gray-600 hover:text-blue-600 transition-colors">6. Professional
+                                Standards</a>
+                            <a href="#limitation-liability"
+                                class="block text-gray-600 hover:text-blue-600 transition-colors">7. Limitation of
+                                Liability</a>
+                            <a href="#confidentiality"
+                                class="block text-gray-600 hover:text-blue-600 transition-colors">8. Confidentiality</a>
+                            <a href="#termination" class="block text-gray-600 hover:text-blue-600 transition-colors">9.
+                                Termination</a>
+                            <a href="#intellectual-property"
+                                class="block text-gray-600 hover:text-blue-600 transition-colors">10. Intellectual
+                                Property</a>
+                            <a href="#dispute-resolution"
+                                class="block text-gray-600 hover:text-blue-600 transition-colors">11. Dispute
+                                Resolution</a>
+                            <a href="#governing-law"
+                                class="block text-gray-600 hover:text-blue-600 transition-colors">12. Governing Law</a>
+                            <a href="#changes" class="block text-gray-600 hover:text-blue-600 transition-colors">13.
+                                Changes to Terms</a>
+                            <a href="/contact-legal"
+                                class="block text-gray-600 hover:text-blue-600 transition-colors">14. Contact
+                                Information</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="lg:col-span-3">
+                    <div class="prose prose-lg max-w-none">
+                        <!-- Acceptance of Terms -->
+                        <section id="acceptance" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">1. Acceptance of Terms</h2>
+                            <div class="highlight-box p-6 rounded-lg mb-6">
+                                <p class="text-gray-700 leading-relaxed">
+                                    By accessing our website, engaging our services, or entering into a service
+                                    agreement with BioAgriSence Consultancy ("Company," "we," "our," or "us"), you ("Client,"
+                                    "you," or "your") acknowledge that you have read, understood, and agree to be bound
+                                    by these Terms of Service and all applicable laws and regulations.
+                                </p>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                These terms constitute a legally binding agreement between you and BioAgriSence Consultancy. If
+                                you do not agree to these terms, you must not use our services or access our website.
+                            </p>
+                            <div class="warning-box p-4 rounded-lg">
+                                <p class="text-gray-700">
+                                    <strong>⚠️ Important:</strong> BioAgriSence laws and regulations are complex and
+                                    subject to change. These terms do not guarantee any specific outcome for your
+                                   BioAgriSence application.
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Definitions -->
+                       <section id="definitions" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">2. Definitions</h2>
+                            <p class="text-gray-700 mb-6">For the purposes of these Terms of Service, the following
+                                definitions apply:</p>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-4">
+                                    <div class="border-l-4 border-blue-500 pl-4">
+                                        <h4 class="definition-term">Services</h4>
+                                        <p class="text-gray-700 text-sm mt-1">
+                                            Scientific and business consultation, technical advisory, regulatory guidance, research design, and related services provided by BioAgriSence Consultancy.
+                                        </p>
+                                    </div>
+                                    <div class="border-l-4 border-green-500 pl-4">
+                                        <h4 class="definition-term">Client</h4>
+                                        <p class="text-gray-700 text-sm mt-1">
+                                            Any individual, entity, or corporation (e.g., AgTech startup, agribusiness, research institution) that engages BioAgriSence Consultancy for our professional services.
+                                        </p>
+                                    </div>
+                                    <div class="border-l-4 border-purple-500 pl-4">
+                                        <h4 class="definition-term">Intellectual Property (IP)</h4>
+                                        <p class="text-gray-700 text-sm mt-1">
+                                            Any and all patents, trademarks, copyrights, trade secrets, proprietary data, and biological material concepts developed by the Client or related to the Project.
+                                        </p>
+                                    </div>
+                                    <div class="border-l-4 border-orange-500 pl-4">
+                                        <h4 class="definition-term">Regulatory Body</h4>
+                                        <p class="text-gray-700 text-sm mt-1">
+                                            National or international government agencies responsible for oversight in agriculture, biosafety, environmental protection, or public health (e.g., KEPHIS, NEA, CFIA).
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="border-l-4 border-red-500 pl-4">
+                                        <h4 class="definition-term">Agreement</h4>
+                                        <p class="text-gray-700 text-sm mt-1">
+                                            The written Statement of Work (SOW) or formal service agreement between BioAgriSence Consultancy and the Client, including these Terms of Service.
+                                        </p>
+                                    </div>
+                                    <div class="border-l-4 border-teal-500 pl-4">
+                                        <h4 class="definition-term">Confidential Information</h4>
+                                        <p class="text-gray-700 text-sm mt-1">
+                                            All proprietary technical data, biological research results, formulas, business plans, and commercial strategies disclosed by one party to the other.
+                                        </p>
+                                    </div>
+                                    <div class="border-l-4 border-pink-500 pl-4">
+                                        <h4 class="definition-term">Project Fees</h4>
+                                        <p class="text-gray-700 text-sm mt-1">
+                                            The professional fees charged by BioAgriSence Consultancy for the Services outlined in the SOW, exclusive of third-party costs (e.g., lab fees, regulatory filing fees).
+                                        </p>
+                                    </div>
+                                    <div class="border-l-4 border-indigo-500 pl-4">
+                                        <h4 class="definition-term">Force Majeure</h4>
+                                        <p class="text-gray-700 text-sm mt-1">
+                                            Events beyond our reasonable control including natural disasters, governmental policy changes impacting agriculture, pandemics, or unforeseen research failures.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Services -->
+                        <section id="services" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">3. Our Services</h2>
+
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">3.1 Scope of Services</h3>
+                            <p class="text-gray-700 mb-6">BioAgriSence Consultancy provides a benefit-Focused: Accelerating Agricultural Innovation:</p>
+
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 mb-2">🎯 Consultation Services</h4>
+                                    <ul class="text-gray-700 text-sm space-y-1">
+                                        <li>• Potato Agronomy</li>
+                                        <li>• Molecular Diagnostics</li>
+                                        <li>• Gene Editing (CRISPR)</li>
+                                        <li>• Training and Capacity Building </li>
+                                        <li>• Seed systems </li>
+                                        <li>• Biosensing </li>
+                                    </ul>
+                                </div>
+                                <!-- <div class="bg-green-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 mb-2">📋 Application Services</h4>
+                                    <ul class="text-gray-700 text-sm space-y-1">
+                                        <li>• Form completion and review</li>
+                                        <li>• Document preparation</li>
+                                        <li>• Application submission</li>
+                                        <li>• Progress monitoring</li>
+                                    </ul>
+                                     </div>
+                                -->
+                                <div class="bg-purple-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 mb-2">📞 Support Services</h4>
+                                    <ul class="text-gray-700 text-sm space-y-1">
+                                        <li>• Regular status updates</li>
+                                        <li>• Government correspondence</li>
+                                        <li>• Query resolution</li>
+                                        <li>• Post-submission support</li>
+                                    </ul>
+                                </div>
+                                <!--
+                                <div class="bg-orange-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 mb-2">🔧 Additional Services</h4>
+                                    <ul class="text-gray-700 text-sm space-y-1">
+                                        <li>• Document translation coordination</li>
+                                        <li>• Educational credential assessment</li>
+                                        <li>• Tax filing services</li>
+                                        <li>• Settlement guidance</li>
+                                    </ul>
+                                </div>
+                                -->
+                            </div>
+
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">3.2 Service Limitations</h3>
+                            <div class="danger-box p-6 rounded-lg">
+                                <h4 class="font-semibold text-gray-900 mb-3">🚫 What We Cannot Do:</h4>
+                                <ul class="text-gray-700 space-y-2">
+                                    <!--<li><strong>Guarantee Outcomes:</strong> We cannot guarantee approval of any
+                                        immigration application</li>
+                                    -->
+                                    <li><strong>Legal Representation:</strong> We do not provide legal representation in
+                                        court proceedings</li>
+                                    <li><strong>Fraudulent Documentation:</strong> We do not assist with false or
+                                        misleading information</li>
+                                    <li><strong>Government Decisions:</strong> We cannot influence or control government
+                                        processing times or decisions</li>
+                                    <li><strong>Regulated Activities:</strong> We cannot perform activities reserved for
+                                        lawyers or other regulated professionals</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- Client Obligations -->
+                        <section id="client-obligations" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">4. Client Obligations</h2>
+                            <p class="text-gray-700 mb-6">As our client, you agree to the following obligations:</p>
+
+                            <div class="space-y-4">
+                                <div class="agreement-item">
+                                    <div class="agreement-checkbox"></div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Truthful Information</h4>
+                                        <p class="text-gray-700 text-sm">Provide complete, accurate, and truthful
+                                            information at all times. Any misrepresentation may result in application
+                                            refusal and termination of services.</p>
+                                    </div>
+                                </div>
+                                <!-- <div class="agreement-item">
+                                    <div class="agreement-checkbox"></div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Timely Documentation</h4>
+                                        <p class="text-gray-700 text-sm">Submit all required documents and information
+                                            within specified deadlines. Delays may affect processing times and outcomes.
+                                        </p>
+                                    </div>
+                                </div>-->
+                            
+                                <div class="agreement-item">
+                                    <div class="agreement-checkbox"></div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Payment Obligations</h4>
+                                        <p class="text-gray-700 text-sm">Pay all fees according to the agreed schedule.
+                                            Government fees are separate and payable directly to authorities.</p>
+                                    </div>
+                                </div>
+
+                                <div class="agreement-item">
+                                    <div class="agreement-checkbox"></div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Communication</h4>
+                                        <p class="text-gray-700 text-sm">Maintain open communication and respond
+                                            promptly to our requests for information or clarification.</p>
+                                    </div>
+                                </div>
+
+                                <div class="agreement-item">
+                                    <div class="agreement-checkbox"></div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Compliance</h4>
+                                        <p class="text-gray-700 text-sm">Comply with all applicable laws, regulations,
+                                            and requirements throughout the process.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="warning-box p-4 rounded-lg mt-6">
+                                <p class="text-gray-700">
+                                    <strong>⚠️ Important:</strong> Failure to meet these obligations may result in
+                                    delays, additional costs, application refusal, or termination of services without
+                                    refund.
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Fees and Payment -->
+                        <section id="fees-payment" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">5. Fees and Payment Terms</h2>
+
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">5.1 Service Fees</h3>
+                            <div class="overflow-x-auto mb-6">
+                                <table class="fee-table w-full">
+                                    <thead>
+                                        <tr>
+                                            <th class="px-6 py-4 text-left">Service Type</th>
+                                            <th class="px-6 py-4 text-left">Professional Fee</th>
+                                            <th class="px-6 py-4 text-left">Government Fee*</th>
+                                            <th class="px-6 py-4 text-left">Payment Terms</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-gray-700">
+                                        <tr>
+                                            <td class="px-6 py-4 font-medium">Potato Agronomy</td>
+                                            <td class="px-6 py-4">$299 - $499</td>
+                                            <td class="px-6 py-4">$100 CAD</td>
+                                            <td class="px-6 py-4">50% upfront, 50% on submission</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 font-medium">Molecular Diagnostics</td>
+                                            <td class="px-6 py-4">$499 - $799</td>
+                                            <td class="px-6 py-4">$150 CAD</td>
+                                            <td class="px-6 py-4">50% upfront, 50% on submission</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 font-medium">Gene Editing (CRISPR)</td>
+                                            <td class="px-6 py-4">$599 - $999</td>
+                                            <td class="px-6 py-4">$155 CAD</td>
+                                            <td class="px-6 py-4">50% upfront, 50% on submission</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 font-medium">Training and Capacity Building</td>
+                                            <td class="px-6 py-4">$899 - $1,999</td>
+                                            <td class="px-6 py-4">$1,365 CAD</td>
+                                            <td class="px-6 py-4">30% upfront, 40% milestone, 30% submission</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 font-medium">Seed systems & Biosensing</td>
+                                            <td class="px-6 py-4">$699 - $1,499</td>
+                                            <td class="px-6 py-4">$1,080 CAD</td>
+                                            <td class="px-6 py-4">50% upfront, 50% on submission</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="text-sm text-gray-600 mt-2">*Government fees are subject to change and payable
+                                    directly to KRA</p>
+                            </div>
+
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">5.2 Payment Terms</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-4">
+                                    <div class="border-l-4 border-blue-500 pl-4">
+                                        <h4 class="font-semibold text-gray-900">Payment Methods</h4>
+                                        <ul class="text-gray-700 text-sm space-y-1 mt-2">
+                                            <li>• Credit/Debit Cards (Visa, Mastercard)</li>
+                                            <li>• Bank transfers</li>
+                                            <li>• Certified cheques</li>
+                                            <li>• Online payment platforms</li>
+                                        </ul>
+                                    </div>
+                                    <div class="border-l-4 border-green-500 pl-4">
+                                        <h4 class="font-semibold text-gray-900">Payment Schedule</h4>
+                                        <ul class="text-gray-700 text-sm space-y-1 mt-2">
+                                            <li>• Initial consultation: Due upon booking</li>
+                                            <li>• Retainer: Due before work begins</li>
+                                            <li>• Milestone payments: As specified in agreement</li>
+                                            <li>• Final payment: Before submission</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="border-l-4 border-orange-500 pl-4">
+                                        <h4 class="font-semibold text-gray-900">Late Payments</h4>
+                                        <ul class="text-gray-700 text-sm space-y-1 mt-2">
+                                            <li>• 2% monthly interest on overdue amounts</li>
+                                            <li>• Work suspension after 30 days</li>
+                                            <li>• Collection fees may apply</li>
+                                            <li>• No application submission until paid</li>
+                                        </ul>
+                                    </div>
+                                    <div class="border-l-4 border-red-500 pl-4">
+                                        <h4 class="font-semibold text-gray-900">Additional Costs</h4>
+                                        <ul class="text-gray-700 text-sm space-y-1 mt-2">
+                                            <li>• Translation services (if required)</li>
+                                            <li>• Courier and mailing fees</li>
+                                            <li>• Third-party assessment fees</li>
+                                            <li>• Rush processing charges</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="highlight-box p-6 rounded-lg mt-6">
+                                <h4 class="font-semibold text-gray-900 mb-2">💰 Refund Policy</h4>
+                                <p class="text-gray-700 mb-3">
+                                    Refunds are considered on a case-by-case basis. Generally, fees are non-refundable
+                                    once work has commenced. See Section 9 for detailed termination and refund terms.
+                                </p>
+                                <ul class="text-gray-700 text-sm space-y-1">
+                                    <li>• Full refund if services not commenced within 14 days</li>
+                                    <li>• Partial refund may apply for early termination</li>
+                                    <li>• No refund for government fees or third-party costs</li>
+                                    <li>• Refusal of application does not guarantee refund</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- Professional Standards -->
+                       <section id="professional-standards" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">6. Professional Standards</h2>
+
+                            <div class="success-box p-6 rounded-lg mb-6">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">Our Professional Commitments 🌱</h3>
+                                <p class="text-gray-700 mb-4">
+                                    BioAgriSence Consultancy is committed to maintaining the highest scientific, technical, and ethical standards in all our engagements, adhering to global best practices for research, development, and agricultural consultancy.
+                                </p>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-4">
+                                    <h4 class="text-lg font-semibold text-gray-900">Ethical & Scientific Standards</h4>
+                                    <ul class="text-gray-700 space-y-2">
+                                        <li>• Maintain Technical Competence in AgTech, Bioscience, and Regulation</li>
+                                        <li>• Act in the client's Scientific and Commercial Best Interests</li>
+                                        <li>• Provide Data-Driven and Impartial Advice based on current research</li>
+                                        <li>• Ensure strict client and Intellectual Property (IP) confidentiality</li>
+                                        <li>• Adhere to all relevant National Biosafety & Environmental Regulations</li>
+                                        <li>• Avoid Conflicts of Interest that could compromise objectivity</li>
+                                    </ul>
+                                </div>
+                                <div class="space-y-4">
+                                    <h4 class="text-lg font-semibold text-gray-900">Service & Compliance Standards</h4>
+                                    <ul class="text-gray-700 space-y-2">
+                                        <li>• Respond to client inquiries within 48 hours</li>
+                                        <li>• Provide regular project milestones and progress updates</li>
+                                        <li>• Maintain accurate scientific and regulatory records</li>
+                                        <li>• Use secure data handling and communication methods</li>
+                                        <li>• Provide clear and transparent project scoping and fee structures</li>
+                                        <li>• Deliver consultation and reports in a timely manner</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="highlight-box p-4 rounded-lg mt-6">
+                                <p class="text-gray-700">
+                                    <strong>🔬 Industry Affiliations:</strong> Our consultants hold degrees and affiliations with recognized scientific and agricultural bodies, ensuring our advice meets the standards required for regulatory submissions and R&D integrity.
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Limitation of Liability -->
+                        <section id="limitation-liability" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">7. Limitation of Liability</h2>
+
+                            <div class="danger-box p-6 rounded-lg mb-6">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">⚠️ Important Disclaimers</h3>
+                                <p class="text-gray-700 mb-4">
+                                    Please read this section carefully as it limits BioAgriSence Consultancy's liability and
+                                    affects your legal rights concerning the outcomes of scientific consultation.
+                                </p>
+                            </div>
+
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">7.1 No Guarantee of Project Outcomes or Approvals</h3>
+                            <p class="text-gray-700 mb-4">
+                                BioAgriSence Consultancy provides advice based on current scientific knowledge and regulatory requirements. We do not guarantee the technical success of research and development (R&D) efforts, the efficacy of biological products, or the final regulatory approval (e.g., from bodies like KEPHIS, NEA, or PPB) of any product or submission. Regulatory decisions and scientific results are subject to external factors, including data quality, biological variability, and governmental policy changes.
+                            </p>
+
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">7.2 Limitation of Damages</h3>
+                            <p class="text-gray-700 mb-4">
+                                Our total liability to you for any claim arising from our services shall not exceed the
+                                total amount of professional fees paid to us for the specific service giving rise to the
+                                claim. We shall not be liable for:
+                            </p>
+                            <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
+                                <li>Indirect, consequential, or punitive damages</li>
+                                <li>Lost profits, revenues, or business opportunities related to R&D failure</li>
+                                <li>Financial losses resulting from external scientific risks or market fluctuations</li>
+                                <li>Damages caused by client's misuse or misapplication of our recommendations</li>
+                                <li>Government regulatory delays or rejection of product submissions</li>
+                                <li>Losses resulting from changes in relevant Agricultural or Environmental Laws</li>
+                                <li>Third-party actions or decisions affecting project success</li>
+                                <li>Force majeure events (e.g., extreme weather, pandemics)</li>
+                            </ul>
+
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">7.3 Professional Insurance</h3>
+                            <div class="highlight-box p-4 rounded-lg">
+                                <p class="text-gray-700">
+                                    BioAgriSence Consultancy maintains professional liability insurance (Errors & Omissions) typical for scientific and business consulting firms. Claims may be covered by our insurance subject to policy terms and conditions.
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Confidentiality -->
+                        <section id="confidentiality" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">8. Confidentiality</h2>
+
+                            <div class="success-box p-6 rounded-lg mb-6">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-3">🔒 Your Privacy is Protected</h3>
+                                <p class="text-gray-700">
+                                    We are committed to protecting the confidentiality of all information you provide to
+                                    us in accordance with professional standards and applicable privacy laws.
+                                </p>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-3">What We Protect</h4>
+                                    <ul class="text-gray-700 space-y-2">
+                                        <li>• Personal identification information</li>
+                                        <li>• Financial records and statements</li>
+                                        <li>• Education documents</li>
+                                        <li>• Family and relationship details (if applicable)</li>
+                                        <li>• Employment records</li>
+                                        <li>• Medical information (if applicable)</li>
+                                        <li>• All communications with our office</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-3">Permitted Disclosures</h4>
+                                    <ul class="text-gray-700 space-y-2">
+                                        <li>• To government authorities as required</li>
+                                        <li>• With your written consent</li>
+                                        <li>• To our authorized service providers</li>
+                                        <li>• As required by law or court order</li>
+                                        <li>• To prevent fraud or illegal activity</li>
+                                        <li>• For quality assurance purposes (anonymized)</li>
+                                        <li>• To our professional insurance provider</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="highlight-box p-4 rounded-lg mt-6">
+                                <p class="text-gray-700">
+                                    <strong>📄 Data Retention:</strong> We retain your information for a minimum of 7
+                                    years after the completion of services as required by professional regulations. See
+                                    our Privacy Policy for complete details.
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Termination -->
+                        <section id="termination" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">9. Termination</h2>
+
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">9.1 Termination by Client</h3>
+                            <p class="text-gray-700 mb-4">
+                                You may terminate our services at any time by providing written notice. Upon
+                                termination:
+                            </p>
+                            <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
+                                <li>You are responsible for all fees incurred up to the date of termination</li>
+                                <li>We will provide copies of all documents and work completed</li>
+                                <li>Any refund will be calculated based on work remaining</li>
+                                <li>Government fees and third-party costs are non-refundable</li>
+                                <li>We will cease all work immediately upon notice</li>
+                            </ul>
+
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">9.2 Termination by BioAgriSence Consultancy</h3>
+                            <p class="text-gray-700 mb-4">
+                                We may terminate our services in the following circumstances:
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div class="warning-box p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 mb-2">With Notice</h4>
+                                    <ul class="text-gray-700 text-sm space-y-1">
+                                        <li>• Non-payment of fees after 30 days</li>
+                                        <li>• Failure to provide required documents</li>
+                                        <li>• Breakdown in client-consultant relationship</li>
+                                        <li>• Change in circumstances affecting service</li>
+                                    </ul>
+                                </div>
+                                <div class="danger-box p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 mb-2">Immediate Termination</h4>
+                                    <ul class="text-gray-700 text-sm space-y-1">
+                                        <li>• Providing false or misleading information</li>
+                                        <li>• Requesting fraudulent documentation</li>
+                                        <li>• Threatening or abusive behavior</li>
+                                        <li>• Conflict of interest situations</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">9.3 Post-Termination Obligations</h3>
+                            <div class="highlight-box p-4 rounded-lg">
+                                <p class="text-gray-700">
+                                    Upon termination, both parties remain bound by confidentiality obligations. We will
+                                    transfer your file to another consultant if requested and ethically appropriate.
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Intellectual Property -->
+                        <section id="intellectual-property" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">10. Intellectual Property</h2>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="highlight-box p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 mb-2">Our Property</h4>
+                                    <ul class="text-gray-700 text-sm space-y-1">
+                                        <li>• Website content and design</li>
+                                        <li>• Proprietary forms and templates</li>
+                                        <li>• Business processes and methodologies</li>
+                                        <li>• Training materials and resources</li>
+                                        <li>• Software and technology systems</li>
+                                        <li>• Trademarks and brand materials</li>
+                                    </ul>
+                                </div>
+                                <div class="success-box p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 mb-2">Your Property</h4>
+                                    <ul class="text-gray-700 text-sm space-y-1">
+                                        <li>• Personal documents and information</li>
+                                        <li>• Photographs and identity documents</li>
+                                        <li>• Educational and professional certificates</li>
+                                        <li>• Financial records and statements</li>
+                                        <li>• Work products created for your case</li>
+                                        <li>• Completed application forms</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <p class="text-gray-700 mt-6">
+                                You grant us a limited license to use your information and documents solely for the
+                                purpose of providing BioAgriSence services. We do not claim ownership of your personal
+                                documents or information.
+                            </p>
+                        </section>
+
+                        <!-- Dispute Resolution -->
+                        <section id="dispute-resolution" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">11. Dispute Resolution</h2>
+
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">11.1 Internal Resolution Process</h3>
+                            <div class="space-y-4 mb-6">
+                                <div class="flex items-start space-x-4">
+                                    <div
+                                        class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <span class="text-white text-sm font-bold">1</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Direct Discussion</h4>
+                                        <p class="text-gray-700 text-sm">Contact your assigned consultant to discuss the
+                                            issue and seek resolution.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-4">
+                                    <div
+                                        class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <span class="text-white text-sm font-bold">2</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Management Review</h4>
+                                        <p class="text-gray-700 text-sm">If unresolved, escalate to our management team
+                                            for review and resolution.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-4">
+                                    <div
+                                        class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <span class="text-white text-sm font-bold">3</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Formal Complaint</h4>
+                                        <p class="text-gray-700 text-sm">Submit a written complaint outlining the issue
+                                            and desired resolution.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">11.2 External Options</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="border border-gray-200 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 mb-2">CICC Complaints</h4>
+                                    <p class="text-gray-700 text-sm mb-2">Professional conduct complaints can be filed
+                                        with the BioAgriSence Consultants.</p>
+                                    <a href=""
+                                        class="text-blue-600 text-sm hover:underline">File a Complaint</a>
+                                </div>
+                                <div class="border border-gray-200 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 mb-2">Mediation/Arbitration</h4>
+                                    <p class="text-gray-700 text-sm mb-2">Disputes may be resolved through binding
+                                        arbitration in Toronto, Ontario.</p>
+                                    <p class="text-blue-600 text-sm">ADR Chambers Rules Apply</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Governing Law -->
+                        <section id="governing-law" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">12. Governing Law</h2>
+                            <div class="highlight-box p-6 rounded-lg">
+                                <p class="text-gray-700 mb-4">
+                                    These Terms of Service are governed by the laws of the Republic of Kenya. Any legal
+                                    proceedings shall be conducted exclusively in the competent courts of Nairobi, Kenya.
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 mb-2">Applicable Laws</h4>
+                                        <ul class="text-gray-700 text-sm space-y-1">
+                                            <li>• Biosafety Act, 2009 (Regulating GMOs and Biotech)</li>
+                                            <li>• Industrial Property Act, 2001 (Governing Patents and IP)</li>
+                                            <li>• Plant Breeders' Rights Act</li>
+                                            <li>• Data Protection Act, 2019</li>
+                                            <li>• Environmental Management and Co-ordination Act (EMCA)</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 mb-2">Jurisdiction</h4>
+                                        <ul class="text-gray-700 text-sm space-y-1">
+                                            <li>• Primary: High Court of Kenya</li>
+                                            <li>• Location: Nairobi, Kenya</li>
+                                            <li>• Alternative: Binding arbitration</li>
+                                            <li>• Language: English</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Changes to Terms -->
+                        <section id="changes" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">13. Changes to Terms</h2>
+                            <p class="text-gray-700 mb-6">
+                                BioAgriSence Consultancy reserves the right to modify these Terms of Service at any time. Changes
+                                will be effective immediately upon posting on our website. We will notify existing
+                                clients of material changes by:
+                            </p>
+                            <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
+                                <li>Email notification to registered clients</li>
+                                <li>Prominent notice on our website</li>
+                                <li>Direct notification during service interactions</li>
+                                <li>Update to the "Last Updated" date</li>
+                            </ul>
+
+                            <div class="warning-box p-4 rounded-lg">
+                                <p class="text-gray-700">
+                                    <strong>⚠️ Continued Use:</strong> Your continued use of our services after changes
+                                    are posted constitutes acceptance of the modified terms. If you do not agree to
+                                    changes, you must discontinue use of our services.
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Contact Legal -->
+                        <section id="contact-legal" class="content-section mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">14. Contact Information</h2>
+                            <div class="contact-card p-8">
+                                <h3 class="text-2xl font-bold mb-4">Questions About These Terms?</h3>
+                                <p class="mb-6 opacity-90">
+                                    If you have any questions about these Terms of Service or need clarification on any
+                                    provisions, please contact us using the information below:
+                                </p>
+
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="font-semibold mb-3">Legal Department</h4>
+                                        <div class="space-y-2 text-sm opacity-90">
+                                            <p>📧 info@Bioagrisence.com</p>
+                                            <p>📞 +1 (782) 234-0211 ext. 101</p>
+                                            <p>⏰ Response Time: Within 48 hours</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold mb-3">Mailing Address</h4>
+                                        <div class="text-sm opacity-90">
+                                            <p>BioAgriSence Consultancy</p>
+                                            <p>Attention: Legal Department</p>
+                                            <p>123 Business Street, Suite 456</p>
+                                            <p>Toronto, ON M5V 3A8</p>
+                                            <p>Canada</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-6 p-4 bg-white bg-opacity-20 rounded-lg">
+                                    <p class="text-sm">
+                                        <strong>Professional Registration:</strong> CICC Member #R123456 | Licensed
+                                        BioAgriSence Consultant
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Agreement Confirmation -->
+                        <section class="content-section mb-12">
+                            <div
+                                class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl border-2 border-blue-200">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">📋 Agreement Confirmation</h3>
+                                <p class="text-gray-700 mb-6">
+                                    By engaging our services, signing our service agreement, or using our website, you
+                                    acknowledge that you have:
+                                </p>
+
+                                <div class="space-y-3 mb-6">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-5 h-5 border-2 border-blue-600 rounded"></div>
+                                        <span class="text-gray-700">Read and understood these Terms of Service in their
+                                            entirety</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-5 h-5 border-2 border-blue-600 rounded"></div>
+                                        <span class="text-gray-700">Agreed to be bound by all terms and
+                                            conditions</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-5 h-5 border-2 border-blue-600 rounded"></div>
+                                        <span class="text-gray-700">Understood the limitations and disclaimers</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-5 h-5 border-2 border-blue-600 rounded"></div>
+                                        <span class="text-gray-700">Confirmed your authority to enter into this
+                                            agreement</span>
+                                    </div>
+                                </div>
+
+                                <p class="text-gray-700 text-sm">
+                                    <strong>Effective Date:</strong> These terms become effective upon your first use of
+                                    our services or acceptance of our service agreement, whichever occurs first.
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="morphing-bg py-20">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-white mb-6 fade-in">Your Privacy Matters to Us</h2>
+            <p class="text-xl text-blue-100 mb-8 fade-in fade-in-delay-1">
+                We're committed to protecting your personal information. If you have any questions about our privacy
+                practices, don't hesitate to reach out.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in fade-in-delay-2">
+                <button
+                    class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 hover:scale-105 magnetic btn-loading">
+                    Contact Privacy Officer
+                </button>
+                <button
+                    class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 hover:scale-105 magnetic">
+                    Back to Home
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-[93em] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="fade-in">
+                    <div class="text-3xl font-bold mb-6 gradient-text">BioAgriSence</div>
+                    <p class="text-gray-400 mb-6">Your trusted partner for BioAgriSence Consulting</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition-all duration-300 hover:scale-110 pulse-glow">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition-all duration-300 hover:scale-110 pulse-glow">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition-all duration-300 hover:scale-110 pulse-glow">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500 transition-all duration-300 hover:scale-110 pulse-glow">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.347-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378 0 0-.599 2.282-.744 2.840-.282 1.084-1.064 2.456-1.549 3.235C9.584 23.815 10.77 24.001 12.017 24.001c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="fade-in fade-in-delay-1">
+                    <h3 class="text-lg font-semibold mb-6">Services</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors hover:scale-105 inline-block">Potato Agronomy 
+                                </a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:scale-105 inline-block">Molecular Diagnostics 
+                                </a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:scale-105 inline-block">Gene Editing (CRISPR)
+                                </a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:scale-105 inline-block">Training and Capacity Building
+                                </a></li>
+                        <li><a href="#"
+                                class="hover:text-white transition-colors hover:scale-105 inline-block">Seed systems</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:scale-105 inline-block">Biosensing</a></li>
+                    </ul>
+                </div>
+
+                <div class="fade-in fade-in-delay-2">
+                    <h3 class="text-lg font-semibold mb-6">Company</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="about.html"
+                                class="hover:text-white transition-colors hover:scale-105 inline-block">About
+                                Us</a>
+                        </li>
+                        <li><a href="contact.html"
+                                class="hover:text-white transition-colors hover:scale-105 inline-block">Contact</a>
+                        </li>
+                        <li><a href="privacypolicy.html"
+                                class="hover:text-white transition-colors hover:scale-105 inline-block">Privacy
+                                Policy</a>
+                        </li>
+                        <li><a href="terms.html"
+                                class="hover:text-white transition-colors hover:scale-105 inline-block">Terms of
+                                Service</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="fade-in fade-in-delay-3">
+                    <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+                    <div class="space-y-3 text-gray-400">
+                        <p class="flex items-center hover:text-white transition-colors">
+                            <span class="mr-2">📧</span> info@Bioagrisence.com
+                        </p>
+                        <p class="flex items-center hover:text-white transition-colors">
+                            <span class="mr-2">📞</span> +254 XXX XXX XXX
+                        </p>
+                        <p class="flex items-center hover:text-white transition-colors">
+                            <span class="mr-2">📍</span> Nairobi
+                        </p>
+                        <p class="flex items-center hover:text-white transition-colors">
+                            <span class="mr-2">🕒</span> www.bioagrisence.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 fade-in fade-in-delay-4">
+                <p> &#169; Trevor. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(28, 43, 108, 0.95)';
+                nav.style.backdropFilter = 'blur(20px)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.1)';
+                nav.style.backdropFilter = 'blur(10px)';
+            }
+        });
+
+        // Reading progress bar
+        window.addEventListener('scroll', () => {
+            const progressBar = document.getElementById('progressBar');
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (window.pageYOffset / totalHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // Table of contents active navigation
+        const sections = document.querySelectorAll('.content-section');
+        const navLinks = document.querySelectorAll('.toc-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('.toc-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Magnetic effect
+        document.querySelectorAll('.magnetic').forEach(element => {
+            element.addEventListener('mousemove', (e) => {
+                const rect = element.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                element.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.05)`;
+            });
+
+            element.addEventListener('mouseleave', () => {
+                element.style.transform = 'translate(0px, 0px) scale(1)';
+            });
+        });
+
+        // Initialize animations on page load
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+
+</html>
