@@ -861,6 +861,59 @@
                 }
             });
         });
+         // Simple JavaScript to toggle the dropdown's visibility and apply smooth transition classes
+                function toggleNavDropdown() {
+                    const button = document.getElementById('nav-dropdown-button');
+                    const content = document.getElementById('nav-menu-content');
+                    const arrow = button.querySelector('.dropdown-arrow');
+
+                    const isOpen = content.classList.contains('opacity-100');
+
+                    if (isOpen) {
+                        // Close the dropdown smoothly
+                        content.classList.remove('opacity-100', 'scale-100', 'visible');
+                        content.classList.add('opacity-0', 'scale-95', 'invisible');
+                        arrow.classList.remove('rotate-180');
+                        button.setAttribute('aria-expanded', 'false');
+                    } else {
+                        // Open the dropdown smoothly
+                        content.classList.remove('opacity-0', 'scale-95', 'invisible');
+                        content.classList.add('opacity-100', 'scale-100', 'visible');
+                        arrow.classList.add('rotate-180');
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+                }
+
+                // Attach the toggle function to the button click event
+                document.addEventListener('DOMContentLoaded', () => {
+                    const button = document.getElementById('nav-dropdown-button');
+                    if (button) {
+                        button.addEventListener('click', toggleNavDropdown);
+                    }
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', (event) => {
+                    const button = document.getElementById('nav-dropdown-button');
+                    const content = document.getElementById('nav-menu-content');
+                    
+                    if (button && content && !button.contains(event.target) && !content.contains(event.target)) {
+                        // Check if it's currently open before closing
+                        if (content.classList.contains('opacity-100')) {
+                            toggleNavDropdown();
+                        }
+                    }
+                });
+
+                    // Add rainbow animation for easter egg
+                    const style = document.createElement('style');
+                    style.textContent = `
+                                    @keyframes rainbow {
+                                        0% { filter: hue-rotate(0deg); }
+                                        100% { filter: hue-rotate(360deg); }
+                                    }
+                                `;
+                    document.head.appendChild(style);
     </script>
 </body>
 
